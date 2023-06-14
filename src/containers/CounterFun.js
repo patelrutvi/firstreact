@@ -4,18 +4,23 @@ function CounterFun(props) {
     const [count,setCount] = useState(0)
     const handlePlasee = () => {
         console.log("jb");
-        setCount(count+1)
+        if(count < 5){
+            setCount(count+1)
+        }
+       
     }
     const handleMinuss = () => {
         console.log("jhvbh");
-        setCount(count-1)
+        if(count > 0){
+            setCount(count-1)
+        }
     }
     return (
         <div>
             <>
-            <p>{count}</p>
-            <button onClick={handlePlasee}>+</button>
-            <button onClick={handleMinuss}>-</button>
+            <p>Counter:{count}</p>
+            <button disabled={count < 5 ? false :true} onClick={handlePlasee}>+</button>
+            <button disabled={count === 0 ? true : false} onClick={handleMinuss}>-</button>
             </>
         </div>
     );

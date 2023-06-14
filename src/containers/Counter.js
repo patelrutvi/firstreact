@@ -9,24 +9,31 @@ class Counter extends Component {
     }
     handlePlase = () => {
         console.log("plass");
-        this.setState({
-            count:this.state.count+1
-        })
+
+        if(this.state.count < 5){
+            this.setState({
+                count:this.state.count+1
+            })
+        }
+       
     }
     handleMinus = () => {
         console.log("minusss");
-        this.setState({
-            count:this.state.count-1
-        })
+        if(this.state.count > 0){
+            this.setState({
+                count:this.state.count-1
+            })
+        }
+       
     }
 
     render() {
         return (
             <div>
               <>
-              <p>{this.state.count}</p>
-                <button onClick={this.handlePlase}>+</button>
-                <button onClick={this.handleMinus}>-</button>
+              <p>Counter:{this.state.count}</p>
+                <button disabled={this.state.count < 5 ? false : true} onClick={this.handlePlase}>+</button>
+                <button disabled={this.state.count === 0 ? true : false} onClick={this.handleMinus}>-</button>
               </>
             </div>
         );
