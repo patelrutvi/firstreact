@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+
 
 class Employe extends Component {
     constructor(props) {
@@ -23,6 +25,7 @@ class Employe extends Component {
                 <p>Name:{this.state.name}</p>
                 <p>Age:{this.state.age}</p>
                 <button onClick={this.handleClick}>Change Age</button>
+                <Button color="danger">Danger!</Button>;
             </div>
         );
     }
